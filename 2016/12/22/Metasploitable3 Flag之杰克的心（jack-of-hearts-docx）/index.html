@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="迷失在信息安全圈的有志青年">
+  <meta name="keywords" content="潇洒画师,网络安全,村夫,渗透测试,黑客技术,IT网站,程序员,编程,python">
+  
+    <link rel="icon" href="">
+  
+    
+  <title>Metasploitable3 flag 杰克的心（jack_of_hearts.docx） | 潇洒画师</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/lib/jquery.fancybox.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <header>
+  <div class="header-container">
+    <a class='logo' href="/">
+      <span>潇洒画师</span>
+    </a>
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/links" class="item-link">朋友</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+</header>
+
+  <main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h1>Metasploitable3 flag 杰克的心（jack_of_hearts.docx）</h1>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2016年12月22日</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术交流/">技术交流</a>
+  </div>
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#经验" class='tag'>经验</a>
+
+
+            
+          </div>
+          <blockquote>
+<p>请凭借自己的理解去看<br><a id="more"></a><br>首先<br>当我们闹心巴拉的把metasploitable3搭建完的时候，距离metasploitable3的发布时间已经过去两个月了，其中的15个Flag已经被人拿完了，虽然没做成第一个吃螃蟹的，但是我们也要去尝尝螃蟹，不是么？</p>
+</blockquote>
+<h2 id="jack-of-hearts-docx"><a href="#jack-of-hearts-docx" class="headerlink" title="jack_of_hearts.docx"></a>jack_of_hearts.docx</h2><ul>
+<li>我们在metasploitable3中 /Users/Public/Public Documents中看看是否有flag这个文件夹，如果没有，请移步<a href="https://github.com/rapid7/metasploitable3/tree/master/resources/flags" target="_blank" rel="noopener">github</a>自行下载</li>
+</ul>
+<p><img src="http://oekmkrjj8.bkt.clouddn.com/ssadfsd(1).png" alt="QQ截图20161221114112.png"></p>
+<ul>
+<li>进入Kali，通过SSH连接（默认账号密码：vagrant）</li>
+</ul>
+<p><img src="http://oekmkrjj8.bkt.clouddn.com/ssadfsd(2).png" alt="QQ截图20161221114143.png"></p>
+<ul>
+<li>连接成功后，进入我们的上级目录，也就是Users目录</li>
+</ul>
+<p><img src="http://oekmkrjj8.bkt.clouddn.com/ssadfsd(3).png" alt="4.png"></p>
+<ul>
+<li>进入Public/Document/flags下，查看目录文件</li>
+</ul>
+<p><img src="http://oekmkrjj8.bkt.clouddn.com/ssadfsd(4).png" alt="QQ截图20161221114735.png"></p>
+<ul>
+<li>pwd查看当前目录，因为我们需要将其中的文件拷贝到kali里再去找flag，然后<strong>exit</strong>退出</li>
+</ul>
+<p><img src="http://oekmkrjj8.bkt.clouddn.com/ssadfsd(5).png" alt="QQ截图20161221114757.png"></p>
+<ul>
+<li>通过scp命令，将jack_of_hearts.docx文件拷贝到我们的root目录下，仔细看哦 后边有个 .</li>
+</ul>
+<p><img src="http://oekmkrjj8.bkt.clouddn.com/ssadfsd(6).png" alt="QQ截图20161221114857.png"></p>
+<ul>
+<li>先用hexeditor看一下是否是隐藏的图片</li>
+</ul>
+<p><img src="http://oekmkrjj8.bkt.clouddn.com/ssadfsd(7).png" alt="QQ截图20161221115022.png"></p>
+<ul>
+<li>Ctrl+w 查找PNG 可以看出 在/word/media目录下有个png文件</li>
+</ul>
+<p><img src="http://oekmkrjj8.bkt.clouddn.com/ssadfsd(8).png" alt="QQ截图20161221115122.png"></p>
+<ul>
+<li>尝试将jack_of_hearts.docx解压</li>
+</ul>
+<p><img src="http://oekmkrjj8.bkt.clouddn.com/ssadfsd(9).png" alt="QQ截图20161221115145.png"></p>
+<ul>
+<li>我们可以看到解压成功，进入word/media下 可以看到flag</li>
+</ul>
+<p><img src="http://oekmkrjj8.bkt.clouddn.com/ssadfsd(10).png" alt="QQ截图20161221115214.png"></p>
+<ul>
+<li>Done</li>
+</ul>
+<p><img src="http://oekmkrjj8.bkt.clouddn.com/ssadfsd(11).png" alt="QQ截图20161221115306.png"></p>
+<p><strong>这应该是这15道题里最简单的，不过也是最经典的题</strong></p>
+<hr>
+
+        </section>
+    </article>
+    
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h1>目录</h1>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#jack-of-hearts-docx"><span class="toc-number">1.</span> <span class="toc-text">jack_of_hearts.docx</span></a></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+
+  <footer>
+  <div class="copyright">
+    <div>
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </div>
+    <div>
+      Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+  
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+      
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<script src="/lib/jquery.fancybox.min.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="迷失在信息安全圈的有志青年">
+  <meta name="keywords" content="潇洒画师,网络安全,村夫,渗透测试,黑客技术,IT网站,程序员,编程,python">
+  
+    <link rel="icon" href="">
+  
+    
+  <title>如何优雅的搭建免费的博客 | 潇洒画师</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/lib/jquery.fancybox.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <header>
+  <div class="header-container">
+    <a class='logo' href="/">
+      <span>潇洒画师</span>
+    </a>
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/links" class="item-link">朋友</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+</header>
+
+  <main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h1>如何优雅的搭建免费的博客</h1>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年09月23日</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/博客搭建/">博客搭建</a>
+  </div>
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#netlify" class='tag'>netlify</a>
+
+
+            
+          </div>
+          <h2 id="那些年鼓捣的博客"><a href="#那些年鼓捣的博客" class="headerlink" title="那些年鼓捣的博客"></a>那些年鼓捣的博客</h2><p>2015年开始学习网络安全，就一直想着能够搭建一个自己的博客，梦想着有朝一日能写出来高质量的文章，但是一直到现在都是目光千里之外，两手背在后边。而搭建博客需要有自己的服务器，需要备案，好在学生时期可以购买阿里的学生服务器折腾折腾，刚开始跟着教程来搞搞wordpress、typecho、还有其他的轻博客。。。但是访问速度和效果都不是很理想（其实压根也没写几篇文章）</p>
+<p>直到后来开始接触静态博客，使用<strong>nodejs+hexo</strong>在本地渲染成为静态的博客，然后<strong>托管到github上</strong>。。。这样也是目前很流行的一种办法，免费、高效，但是github毕竟是国外的，访问速度也是不理想，再后来就托管到<strong>coding</strong>上，这样才暂时不折腾了。</p>
+<p>前几天同事告诉我说coding开始有广告了，想想也是理解，毕竟做这种数据托管的厂商，不能永久免费。但是想去掉广告199/年的价格，我觉得还是略贵。</p>
+<hr>
+<h2 id="使用nodejs-hexo，托管到github，使用netlify加速"><a href="#使用nodejs-hexo，托管到github，使用netlify加速" class="headerlink" title="使用nodejs+hexo，托管到github，使用netlify加速"></a>使用nodejs+hexo，托管到github，使用netlify加速</h2><p>说了那么多，其实是为了说说现在使用的博客搭建的方式。本地依然是采用nodejs+hexo，同时托管到github，<a href="https://app.netlify.com/" target="_blank" rel="noopener">netlify</a> 用来创建网站。</p>
+<p>这样的好处是速度依然可以保障，也免除了烦人的广告。接下来说说搭建的方法：</p>
+<p>nodejs+hexo 托管到github上这个过程我就不多讲了，请移步<a href="http://www.jianshu.com/p/834d7cc0668d" target="_blank" rel="noopener">这里</a></p>
+<p><img src="img/blog1.png" alt=""></p>
+<p>当我们这样搭建好后，登录<strong>netlify</strong></p>
+<p><img src="img/blog2.png" alt=""></p>
+<p>登录之后就可以看到右上角有一个New site from Git</p>
+<p><img src="img/blog3.png" alt=""></p>
+<p>接下来选择github，我们创建的博客其实是引用github仓库的html代码，所以我们可以在本地直接hexo g -d推送到github，netlify也会跟着改变。</p>
+<p><img src="img/blog4.png" alt=""></p>
+<p>这里选择你托管博客的仓库</p>
+<p><img src="img/blog5.png" alt=""></p>
+<p>，下边的两个命令可以不填，因为netlify提供了一个可以创建博客的功能，如果我们在github上托管的是源代码，可以在这里使用命令来生成博客。</p>
+<p><img src="img/blog6.png" alt=""></p>
+<p>最后点击生成按钮，一个新出炉的博客就生成了。</p>
+<h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><p>如果想在netlify绑定域名的话，需要将域名的dns服务器解析到netlify，下篇咱们再讲。</p>
+<hr>
+<p>如果对网络安全感兴趣，喜欢写博客，那就点个赞吧！</p>
+
+        </section>
+    </article>
+    
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h1>目录</h1>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#那些年鼓捣的博客"><span class="toc-number">1.</span> <span class="toc-text">那些年鼓捣的博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用nodejs-hexo，托管到github，使用netlify加速"><span class="toc-number">2.</span> <span class="toc-text">使用nodejs+hexo，托管到github，使用netlify加速</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#绑定域名"><span class="toc-number">3.</span> <span class="toc-text">绑定域名</span></a></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+
+  <footer>
+  <div class="copyright">
+    <div>
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </div>
+    <div>
+      Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+  
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+      
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<script src="/lib/jquery.fancybox.min.js"></script>
+
+
+</body>
+</html>

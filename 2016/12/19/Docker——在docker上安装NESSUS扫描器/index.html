@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="迷失在信息安全圈的有志青年">
+  <meta name="keywords" content="潇洒画师,网络安全,村夫,渗透测试,黑客技术,IT网站,程序员,编程,python">
+  
+    <link rel="icon" href="">
+  
+    
+  <title>Docker——在docker上安装NESSUS扫描器 | 潇洒画师</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/lib/jquery.fancybox.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <header>
+  <div class="header-container">
+    <a class='logo' href="/">
+      <span>潇洒画师</span>
+    </a>
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/links" class="item-link">朋友</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+</header>
+
+  <main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h1>Docker——在docker上安装NESSUS扫描器</h1>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2016年12月19日</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/工具推荐/">工具推荐</a>
+  </div>
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#武器" class='tag'>武器</a>
+
+
+            
+          </div>
+          <blockquote>
+<p>搭建自己的武器库<br>咱们先讲讲如何搭建自己的武器库，不管你是做开发，渗透，还是其他工作，都需要有自己常用和顺手的工具，但是很多时候，鱼和熊掌不可兼得，比如在windows下不能同时安装天境和NESSUS，很多工具我们需要借助虚拟机来完成。不过在你学过docker以后，你会发现，其实这都不是事。本文是讲述一下如何在Ubuntu/kali下安装DOCKER版nessus扫描器。</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="Docker的安装"><a href="#Docker的安装" class="headerlink" title="Docker的安装"></a>Docker的安装</h1><p>这里我们用的是ubuntu系统。所以docker的安装比较简单</p>
+<pre><code>sudo apt-get install docker.io
+</code></pre><p>如果你的源没有docker的安装包，请自己添加163源。</p>
+<p>然后去下载docker的nessus镜像</p>
+<pre><code>sudo docker search nessus
+</code></pre><p>将镜像pull下来：</p>
+<pre><code>sudo docker pull 镜像名称
+</code></pre><p><img src="http://oh8nmx635.bkt.clouddn.com/11.png" alt="请输入图片描述"></p>
+<p>查看一下镜像信息：</p>
+<p><img src="http://oh8nmx635.bkt.clouddn.com/2016-12-19%2012:51:28%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png" alt="请输入图片描述"></p>
+<p>启动：</p>
+<pre><code>sudo docker run -p 8834:8834 ca0d592f478c (这里的镜像ID换成你自己的)
+</code></pre><p><img src="http://oh8nmx635.bkt.clouddn.com/2016-12-19%2012:55:32%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png" alt="请输入图片描述"></p>
+<p>直接访问<a href="https://localhost:8834" target="_blank" rel="noopener">https://localhost:8834</a></p>
+<p><img src="http://oh8nmx635.bkt.clouddn.com/2016-12-19%2013:06:37%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png" alt="请输入图片描述"></p>
+<p>OK</p>
+
+        </section>
+    </article>
+    
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h1>目录</h1>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker的安装"><span class="toc-number">1.</span> <span class="toc-text">Docker的安装</span></a></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+
+  <footer>
+  <div class="copyright">
+    <div>
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </div>
+    <div>
+      Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+  
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+      
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<script src="/lib/jquery.fancybox.min.js"></script>
+
+
+</body>
+</html>

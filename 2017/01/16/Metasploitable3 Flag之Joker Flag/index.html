@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="迷失在信息安全圈的有志青年">
+  <meta name="keywords" content="潇洒画师,网络安全,村夫,渗透测试,黑客技术,IT网站,程序员,编程,python">
+  
+    <link rel="icon" href="">
+  
+    
+  <title>Metasploitable3 Flag之Joker Flag | 潇洒画师</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/lib/jquery.fancybox.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <header>
+  <div class="header-container">
+    <a class='logo' href="/">
+      <span>潇洒画师</span>
+    </a>
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/links" class="item-link">朋友</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+</header>
+
+  <main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h1>Metasploitable3 Flag之Joker Flag</h1>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年01月16日</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术交流/">技术交流</a>
+  </div>
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#经验" class='tag'>经验</a>
+
+
+            
+          </div>
+          <blockquote>
+<p>魔幻数字，文件分析的利器</p>
+</blockquote>
+<a id="more"></a>
+<p>首先告诉大家这个flag的位置是在metasploitable3的80端口。当通过浏览器访问它时，你会看到</p>
+<p>原始的图片</p>
+<p><img src="http://oh8nmx635.bkt.clouddn.com/sdfsds(1).jpg" alt="hahaha.jpg"></p>
+<p>所以，我们去查看一下元素，是不是有什么猫腻</p>
+<p><img src="http://oh8nmx635.bkt.clouddn.com/sdfsds(2).png" alt="2.png"></p>
+<p>原来这里有段隐藏的表单代码！大家可以了解一下asp.net的视图状态。理解隐藏表单代码的作用</p>
+<p><a href="https://msdn.microsoft.com/en-us/library/ms972976.aspx" target="_blank" rel="noopener">点击这里进入MSDN</a></p>
+<p>而这段代码里 就隐藏着咱们需要的flag</p>
+<p>将这段代码复制出来 我们来分析分析！</p>
+<p>将字符串用gedit写入名为file的文件</p>
+<p><img src="http://oh8nmx635.bkt.clouddn.com/sdfsds(3).png" alt="3.png"> </p>
+<p>我们可以看到，字符串的范围为0~9，a~f。可以判断出是十六进制编码。所以我们将编码转储然后重新转回二进制来查看一下文件的头（<strong>文件头一般情况下回包含文件的type信息，可以判断出文件类型，而这串头字符串也被称为魔术字符</strong>）</p>
+<p><img src="http://oh8nmx635.bkt.clouddn.com/sdfsds(4).png" alt="QQ截图20161222142823.png"></p>
+<p>这里用到的命令为：head（显示开头一定数量的文字区块） 和 xxd （用二进制/十六进制模式打开）</p>
+<p><img src="http://oh8nmx635.bkt.clouddn.com/sdfsds(5).png" alt="5.png"></p>
+<p>再与魔术字符进行对比（魔术字符的含义 大家可以去百度一下啊）<br>我将常用的写出来</p>
+<p>JPG(FFD8FFE000104A464946)<br>PNG(89504E470D0A1A0）<br>GIF(47494638396126026F01)<br>TIF(49492A00227105008037”)<br>BMP16(“424D228C010000000000”)16色位图(bmp)<br>BMP24(“424D8240090000000000”) // 24位位图(bmp)<br>BMP256(“424D8E1B030000000000”)// 256色位图(bmp)<br>DWG(“41433130313500000000”)<br>HTML(“3C21444F435459504520”)<br>HTM(“3C21646F637479706520”)<br>CSS(“48544D4C207B0D0A0942”)<br>JS(“696B2E71623D696B2E71”)<br>RTF(“7B5C727466315C616E73”)<br>PSD(“38425053000100000000”)<br>EML(“46726F6D3A203D3F6762”)<br>DOC(“D0CF11E0A1B11AE10000”)</p>
+<p><img src="http://oh8nmx635.bkt.clouddn.com/sdfsds(6).png" alt="6.png"></p>
+<p>这里可以判断出这是个png图片，然后我们将file文件格式化为png图片</p>
+<p><img src="http://oh8nmx635.bkt.clouddn.com/sdfsds(7).png" alt="7.png"></p>
+<p>然后查看一下！！</p>
+<p><img src="http://oh8nmx635.bkt.clouddn.com/sdfsds(8).png" alt="8.png"></p>
+<p>OK 已经找到我们的flag了！！</p>
+<hr>
+<h2 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h2><p>我们的文件大都会有魔幻数来指明文件类型，这对我们来分析文件很有帮助，所以要掌握常用的‘魔数’。</p>
+
+        </section>
+    </article>
+    
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h1>目录</h1>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#总结一下"><span class="toc-number">1.</span> <span class="toc-text">总结一下</span></a></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+
+  <footer>
+  <div class="copyright">
+    <div>
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </div>
+    <div>
+      Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+  
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+      
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<script src="/lib/jquery.fancybox.min.js"></script>
+
+
+</body>
+</html>
