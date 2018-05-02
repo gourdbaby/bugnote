@@ -64,7 +64,7 @@
     <hr>
   </header>
   <div class="post-content">
-    <h3 id="漏洞描述"><a href="#漏洞描述" class="headerlink" title="漏洞描述"></a>漏洞描述</h3><p>使用HTTP代理工具，如BurpSuite篡改HTTP报文头部中HOST字段时，客户端提交的HOST值，该值可被注入恶意代码。</p>
+    <h3 id="漏洞描述"><a href="#漏洞描述" class="headerlink" title="漏洞描述"></a>漏洞描述</h3><p>使用HTTP代理工具，如BurpSuite篡改HTTP报文头部中HOST字段时，客户端提交的HOST值，该值可被注入恶意代码。<br><a id="more"></a></p>
 <h3 id="漏洞等级"><a href="#漏洞等级" class="headerlink" title="漏洞等级"></a>漏洞等级</h3><p>中</p>
 <h3 id="修复建议"><a href="#修复建议" class="headerlink" title="修复建议"></a>修复建议</h3><p>不要使用类似JSP中request.getServerName()的方法引用客户端输入的host值。直接拼接生成URL时引用静态变量定义的服务器域名，或者使用相对路径生成URL。</p>
 
