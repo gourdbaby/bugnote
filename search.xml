@@ -6,7 +6,7 @@
       <title>如何一键获取SSL证书</title>
       <link href="/2018/03/26/%E5%A6%82%E4%BD%95%E4%B8%80%E9%94%AE%E8%8E%B7%E5%8F%96SSL%E8%AF%81%E4%B9%A6/"/>
       <url>/2018/03/26/%E5%A6%82%E4%BD%95%E4%B8%80%E9%94%AE%E8%8E%B7%E5%8F%96SSL%E8%AF%81%E4%B9%A6/</url>
-      <content type="html"><![CDATA[<p>目前SSL免费证书提供商Let’s Encrypt可以通过命令行来获取SSL证书，具体配置详见google，在此分享一个可直接获取SSL证书的网站。。</p><p><a href="https://www.sslforfree.com/" target="_blank" rel="noopener">https://www.sslforfree.com/</a></p><p><img src="1.jpg" alt="1.jpg"></p><a id="more"></a><p>获取方法</p><p>直接输入域名，然后验证一下域名就可以下载相关的文件了。</p><p><img src="2.png" alt="2.png"></p><p><img src="3.png" alt="3.png"><br>有三种验证方式，我直接选择文件验证，不过你也可以选择FTP，给足够的权限，不用你去下载，比较方便。<br><img src="4.png" alt="4.png"></p><p>不过需要注意的是，这个证书3个月后就会到期。所以你到时候需要重新创建一下新的SSL。</p><p>可以在网站注册一个账号，会在到期的前一周提醒您。</p>]]></content>
+      <content type="html"><![CDATA[<p>目前SSL免费证书提供商Let’s Encrypt可以通过命令行来获取SSL证书，具体配置详见google，在此分享一个可直接获取SSL证书的网站。。</p><p><a href="https://www.sslforfree.com/" target="_blank" rel="noopener">https://www.sslforfree.com/</a><br><a id="more"></a><br><img src="1.jpg" alt="1.jpg"></p><p>获取方法</p><p>直接输入域名，然后验证一下域名就可以下载相关的文件了。</p><p><img src="2.png" alt="2.png"></p><p><img src="3.png" alt="3.png"><br>有三种验证方式，我直接选择文件验证，不过你也可以选择FTP，给足够的权限，不用你去下载，比较方便。<br><img src="4.png" alt="4.png"></p><p>不过需要注意的是，这个证书3个月后就会到期。所以你到时候需要重新创建一下新的SSL。</p><p>可以在网站注册一个账号，会在到期的前一周提醒您。</p>]]></content>
       
       
         <tags>
