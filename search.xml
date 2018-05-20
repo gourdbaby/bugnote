@@ -3,6 +3,15 @@
   
     
     <entry>
+      <title>浏览器关闭了,session就销毁了？</title>
+      <link href="/2018/05/20/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%B3%E9%97%AD%E4%BA%86-session%E5%B0%B1%E9%94%80%E6%AF%81%E4%BA%86%EF%BC%9F/"/>
+      <url>/2018/05/20/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%B3%E9%97%AD%E4%BA%86-session%E5%B0%B1%E9%94%80%E6%AF%81%E4%BA%86%EF%BC%9F/</url>
+      <content type="html"><![CDATA[<p>今天想和大家分享一个关于Session的话题: 当浏览器关闭时，Session就被销毁了？</p><p>我们知道Session是JSP的九大内置对象（也叫隐含对象）中的一个，它的作用是可以保</p><p>存当前用户的状态信息，初学它的时候，认为Session的生命周期是从打开一个浏览器窗</p><p>口发送请求到关闭浏览器窗口，但其实这种说法是不正确的！下面就具体的去解释：</p><a id="more"></a><p>当用户第一次访问Web应用中支持Session的某个网页时，就会开始一个新的Session，</p><p>那么接下来当用户浏览这个Web应用的不同网页时，始终处于一个Session中</p><p>再详细些：</p><p>当一个Session开始时，Servlet容器会创建一个HttpSession对象，那么在HttpSession对象中，可以存放用户状态的信息</p><p>Servlet容器为HttpSession对象分配一个唯一标识符即Sessionid，Servlet容器把Sessionid作为一种Cookie保存在客户端的 <em>浏览器</em> 中</p><p>用户每次发出Http请求时，Servlet容器会从HttpServletRequest对象中取出Sessionid,然后根据这个Sessionid找到相应的HttpSession对象，从而获取用户的状态信息<br>以上就是Session的运行机制，但是还没有提到Session的生命周期，再往下了解！</p><p>其实让Session结束生命周期，有以下两种办法：</p><p>一个是Session.invalidate()方法，不过这个方法在实际的开发中，并不推荐，可能在强制注销用户的时候会使用；<br>一个是当前用户和服务器的交互时间超过默认时间后，Session会失效<br>我们知道Session是存在于服务器端的，当把浏览器关闭时，浏览器并没有向服务器发送</p><p>任何请求来关闭Session，自然Session也不会被销毁，但是可以做一点努力，在所有的</p><p>客户端页面里使用js的window.onclose来监视浏览器的关闭动作，然后向服务器发送一</p><p>个请求来关闭Session，但是这种做法在实际的开发中也是不推荐使用的，最正常的办法</p><p>就是不去管它，让它等到默认的时间后，自动销毁</p><p>那么为什么当我们关闭浏览器后，就再也访问不到之前的session了呢？</p><p>其实之前的Session一直都在服务器端，而当我们关闭浏览器时，此时的Cookie是存在</p><p>于浏览器的进程中的，当浏览器关闭时，Cookie也就不存在了。</p><p>其实Cookie有两种:</p><p>一种是存在于浏览器的进程中;<br>一种是存在于硬盘上</p><p>而session的Cookie是存在于浏览器的进程中，那么这种Cookie我们称为会话Cookie，</p><p>当我们重新打开浏览器窗口时，之前的Cookie中存放的Sessionid已经不存在了，此时</p><p>服务器从HttpServletRequest对象中没有检查到sessionid，服务器会再发送一个新的存</p><p>有Sessionid的Cookie到客户端的浏览器中，此时对应的是一个新的会话，而服务器上</p><p>原先的session等到它的默认时间到之后，便会自动销毁。</p><p>ps:</p><p>当在同一个浏览器中同时打开多个标签，发送同一个请求或不同的请求，仍是同一个session;</p><p>当不在同一个窗口中打开相同的浏览器时，发送请求，仍是同一个session;</p><p>当使用不同的浏览器时，发送请求，即使发送相同的请求，是不同的session;</p><p>当把当前某个浏览器的窗口全关闭，再打开，发起相同的请求时，就是本文所阐述的，是不同的session,但是它和session的生命周期是没有关系的。</p>]]></content>
+      
+      
+    </entry>
+    
+    <entry>
       <title>如何一键获取SSL证书</title>
       <link href="/2018/03/26/%E5%A6%82%E4%BD%95%E4%B8%80%E9%94%AE%E8%8E%B7%E5%8F%96SSL%E8%AF%81%E4%B9%A6/"/>
       <url>/2018/03/26/%E5%A6%82%E4%BD%95%E4%B8%80%E9%94%AE%E8%8E%B7%E5%8F%96SSL%E8%AF%81%E4%B9%A6/</url>
